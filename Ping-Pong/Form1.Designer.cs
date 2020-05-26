@@ -53,7 +53,7 @@
             // pictureCircle
             // 
             this.pictureCircle.Image = global::Ping_Pong.Properties.Resources.Circle;
-            this.pictureCircle.Location = new System.Drawing.Point(558, 261);
+            this.pictureCircle.Location = new System.Drawing.Point(603, 255);
             this.pictureCircle.Name = "pictureCircle";
             this.pictureCircle.Size = new System.Drawing.Size(37, 40);
             this.pictureCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

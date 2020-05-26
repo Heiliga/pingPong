@@ -12,19 +12,23 @@ namespace Ping_Pong
 {
     public partial class pingPong : Form
     {
+        Circle circle;// Объект класса Круг
         bool? flag = true; // Добавочная переменная для определения условия
         int rightForm = 670;// Предел высоты формы
+        int x, y;
 
         public pingPong()// Инициализация объектов
         {
-            InitializeComponent();
             this.MouseMove += new MouseEventHandler(pingPongMouse);// инициализация события Mouse
+            InitializeComponent();
+            circle = new Circle(pictureCircle,x,y);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.pingPongLoad);// инициализация события Paint
         }
 
         private void timerTick(object sender, EventArgs e)// Отображает изменение формы каждую секудну
         {
             computer(pictureLeft);
+            circle.MethodCircle(label3, label1, pictureLeft, pictureRight);
         }
 
         private void pingPongMouse(object sender, MouseEventArgs e)// Перемещение панели игрока за курсором мышки
