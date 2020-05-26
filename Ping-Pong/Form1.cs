@@ -16,5 +16,10 @@ namespace Ping_Pong
         {
             InitializeComponent();
         }
+
+        private void timerTick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
