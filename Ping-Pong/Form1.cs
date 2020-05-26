@@ -18,11 +18,31 @@ namespace Ping_Pong
         public pingPong()// Инициализация объектов
         {
             InitializeComponent();
+            this.MouseMove += new MouseEventHandler(pingPongMouse);// инициализация события Mouse
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.pingPongLoad);// инициализация события Paint
         }
 
         private void timerTick(object sender, EventArgs e)// Отображает изменение формы каждую секудну
         {
             computer(pictureLeft);
+        }
+
+        private void pingPongMouse(object sender, MouseEventArgs e)// Перемещение панели игрока за курсором мышки
+        {
+            int X = Cursor.Position.X;
+            int Y = Cursor.Position.Y;
+            if (X >= 1310 / 2 && X < 1296)
+            {
+                pictureRight.Left = X - 160;
+                pictureRight.Top = Y - 160;
+            }
+        }
+        private void pingPongLoad(object sender, PaintEventArgs e)//Вырисовка линии по середине формы(разделение панелей)
+        {
+            Graphics g = e.Graphics;
+            Pen pen1 = new Pen(Color.Black);
+            g.DrawLine(pen1, 475, 60, 475, rightForm);
+
         }
 
         private void computer(PictureBox picture)//Панель, которой управляет компьютер
