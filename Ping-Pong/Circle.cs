@@ -15,11 +15,9 @@ namespace Ping_Pong
         int xCordinate = 3, yCordinate = 3;// начальные значения координат
         int score1 = 0, score2 = 0; // счет 1 и 2 игрока
 
-        public Circle(PictureBox picture, int xCordinate, int yCordinate)// метод для объявления объекта в других классах
+        public Circle(PictureBox picture)// метод для объявления объекта в других классах
         {
             this.pictureCircle = picture;
-            this.xCordinate = xCordinate;
-            this.yCordinate = yCordinate;
         }
 
         public void MethodCircle(Label label1, Label label3, PictureBox pictureLeft, PictureBox pictureRight)// движение круга + изменение счета игроков
@@ -45,17 +43,15 @@ namespace Ping_Pong
                     label3.Text = score2.ToString();
                 }
 
-                pictureCircle.Location = new Point(1296 / 2, 670 / 2); //отображения круга, после гола с пощью случайных координат
+                pictureCircle.Location = new Point(1296/2, 670/2); //отображения круга, после гола с пощью случайных координат
                 do
                 {
                     xCordinate = rand.Next(-4, 4);
                     yCordinate = rand.Next(-4, 4);
                 } while (Math.Abs(xCordinate) + Math.Abs(yCordinate) <= 4 || Math.Abs(xCordinate) <= 1);
             }
-
-            if ((pictureLeft.Bounds.IntersectsWith(pictureCircle.Bounds) && xCordinate < 0) || (pictureRight.Bounds.IntersectsWith(pictureCircle.Bounds) && xCordinate > 0))//препятсиве в виде панели
-                xCordinate *= -1;
-
+            if ((pictureLeft.Bounds.IntersectsWith(pictureCircle.Bounds) && xCordinate < 0) || (pictureRight.Bounds.IntersectsWith(pictureCircle.Bounds) && xCordinate > 0))
+                xCordinate *= -1; // Препятсвие в виде панели
         }
 
     }

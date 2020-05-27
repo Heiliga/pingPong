@@ -15,13 +15,12 @@ namespace Ping_Pong
         Circle circle;// Объект класса Круг
         bool? flag = true; // Добавочная переменная для определения условия
         int rightForm = 670;// Предел высоты формы
-        int x, y;
 
         public pingPong()// Инициализация объектов
         {
             this.MouseMove += new MouseEventHandler(pingPongMouse);// инициализация события Mouse
             InitializeComponent();
-            circle = new Circle(pictureCircle,x,y);
+            circle = new Circle(pictureCircle);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.pingPongLoad);// инициализация события Paint
         }
 
