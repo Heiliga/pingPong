@@ -19,4 +19,5 @@ namespace Ping_Pong
             Application.Run(new pingPong());
         }
     }
+    //создаем конфликт слияния веток
 }
