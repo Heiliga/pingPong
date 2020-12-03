@@ -19,4 +19,5 @@ namespace Ping_Pong
             Application.Run(new pingPong());
         }
     }
+    //Тут должна быть не стыковка 
 }
