@@ -8,6 +8,7 @@ using System.Drawing;
 
 namespace Ping_Pong
 {
+    //Добавление нового комментария 
     public class Circle
     {
         private PictureBox pictureCircle; // объявление графического элемента
@@ -23,21 +24,21 @@ namespace Ping_Pong
         public void MethodCircle(Label label1, Label label3, PictureBox pictureLeft, PictureBox pictureRight)// движение круга + изменение счета игроков
         {
 
-            var bottom1 = 670 - pictureCircle.Height;
-            var bottom2 = 1080 - pictureCircle.Width;
-            pictureCircle.Location = new Point(pictureCircle.Location.X + xCordinate, Math.Max(0, Math.Min(bottom1, pictureCircle.Location.Y + yCordinate)));
+            var bottom_1 = 670 - pictureCircle.Height;
+            var bottom_2 = 1080 - pictureCircle.Width;
+            pictureCircle.Location = new Point(pictureCircle.Location.X + xCordinate, Math.Max(0, Math.Min(bottom_1, pictureCircle.Location.Y + yCordinate)));
 
-            if (pictureCircle.Location.Y >= bottom1 || pictureCircle.Location.Y <= 0)
+            if (pictureCircle.Location.Y >= bottom_1 || pictureCircle.Location.Y <= 0)
                 yCordinate *= -1;
 
-            if (pictureCircle.Location.X <= 0 || pictureCircle.Location.X >= bottom2)//если круг вышел за переделы игры(гол)
+            if (pictureCircle.Location.X <= 0 || pictureCircle.Location.X >= bottom_2)//если круг вышел за переделы игры(гол)
             {
                 if (pictureCircle.Location.X <= 0)
                 {
                     score1++;
                     label1.Text = score1.ToString();
                 }
-                if (pictureCircle.Location.X >= bottom2)
+                if (pictureCircle.Location.X >= bottom_2)
                 {
                     score2++;
                     label3.Text = score2.ToString();
